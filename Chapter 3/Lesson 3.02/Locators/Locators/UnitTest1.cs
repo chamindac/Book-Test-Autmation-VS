@@ -123,7 +123,7 @@ namespace Locators
         }
 
         [TestMethod]
-        public void TestSelectors1()
+        public void CssSelectorSubChild()
         {
             var options = new ChromeOptions();
             options.AddArgument("--start-maximized");
@@ -134,7 +134,7 @@ namespace Locators
         }
 
         [TestMethod]
-        public void TestSelector2()
+        public void CssSelectorUsingID()
         {
             var options = new ChromeOptions();
             options.AddArgument("--start-maximized");
@@ -147,18 +147,18 @@ namespace Locators
         }
 
         [TestMethod]
-        public void TestSelector3()
+        public void CssSelectorNextSibling()
         {
             var options = new ChromeOptions();
             options.AddArgument("--start-maximized");
             IWebDriver driver = new ChromeDriver(options);
             driver.Navigate().GoToUrl("http://eshop-testweb.azurewebsites.net");
-            IWebElement loginLink = driver.FindElement(By.CssSelector(".row > section:nth-of-type(3) > a"));
-            loginLink.Click();
+            IWebElement basketIcon = driver.FindElement(By.CssSelector(".row > section:nth-of-type(3) > a"));
+            basketIcon.Click();
         }
 
         [TestMethod]
-        public void TestSelectors4()
+        public void CssSelectorAttributeValue()
         {
             var options = new ChromeOptions();
             options.AddArgument("--start-maximized");
