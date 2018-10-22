@@ -67,7 +67,6 @@ namespace SeleniumCommands
             driver.Navigate().GoToUrl("https://jqueryui.com/droppable/");
             driver.SwitchTo().Frame(0);
             IWebElement drag = driver.FindElement(By.Id("draggable"));
-            IWebElement drop = driver.FindElement(By.Id("droppable"));
             Actions action = new Actions(driver);
             action.DragAndDropToOffset(drag, 100, 100).Build().Perform();
         }
