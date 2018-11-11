@@ -17,10 +17,10 @@ namespace Testautomationproj1
             IWebDriver driver = new ChromeDriver(option);           
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             driver.Navigate().GoToUrl("https://www.google.lk/");
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("lst-ib")));
-            IWebElement textField = driver.FindElement(By.Id("lst-ib"));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Name("q")));
+            IWebElement textField = driver.FindElement(By.Name("q"));
             textField.SendKeys("Selenium");
-            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.CssSelector("input[value='Google Search'][class='lsb']")));
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.CssSelector("input[value='Google Search']")));
             IWebElement searchButton = driver.FindElement(By.CssSelector("input[value='Google Search']"));
             searchButton.Click();
             Assert.AreEqual(true, wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("Selenium - Google Search")));
